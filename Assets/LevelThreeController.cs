@@ -71,8 +71,7 @@ public class LevelThreeController : LevelController
 			currentNumberTwo = Random.Range(0,5);
 			realAnswer = GetRealAnswer();
 		}
-		else
-			popups[1].gameObject.GetComponent<PopUpController>().show = true;
+
 	}
 	
 
