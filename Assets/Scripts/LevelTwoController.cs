@@ -86,7 +86,6 @@ public class LevelTwoController : LevelController
 			newPosition.x = 0.7f;
 			changeOne = false;
 			currentNumberOne = newNumber;
-			popups[0].gameObject.GetComponent<PopUpController>().show = true;
 		}
 		else // change two
 		{
@@ -94,11 +93,17 @@ public class LevelTwoController : LevelController
 			changeOne = true;
 			currentNumberTwo = newNumber;
 			if (CheckAnswer(currentOperator, currentNumberOne, currentNumberTwo, answer))
+			{
 				answer = Random.Range(2,10);
+				popups[0].gameObject.GetComponent<PopUpController>().show = true;
+			}
+			else
+			{
+				popups[1].gameObject.GetComponent<PopUpController>().show = true;
+			}
 			currentNumberOne = 0;
 			currentNumberTwo = 0;
-			
-			popups[1].gameObject.GetComponent<PopUpController>().show = true;
+
 		}
 		targetCursor.gameObject.transform.position = newPosition;
 	}
