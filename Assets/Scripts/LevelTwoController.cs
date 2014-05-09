@@ -26,6 +26,7 @@ public class LevelTwoController : LevelController
 
 	int answer;
 	int currentNumberTwo;
+	int lastAnswer;
 
 	string operatorText, numberOne, numberTwo, answerText;
 	GameObject OperatorText, NumberOne, NumberTwo, AnswerText;
@@ -94,7 +95,11 @@ public class LevelTwoController : LevelController
 			currentNumberTwo = newNumber;
 			if (CheckAnswer(currentOperator, currentNumberOne, currentNumberTwo, answer))
 			{
+				lastAnswer = answer;
 				answer = Random.Range(2,10);
+				if (answer == lastAnswer) answer += (Random.Range(-2,2));
+				if (answer < 2) answer = 2;
+				if (answer > 9) answer = 9;
 				popups[0].gameObject.GetComponent<PopUpController>().show = true;
 			}
 			else
