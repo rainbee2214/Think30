@@ -28,4 +28,16 @@ public class LevelController : MonoBehaviour
 		
 		return newObject;
 	}
+	public GameObject CreateGUITextObject(GameObject newObject, string name, Vector3 position, int newFontSize)
+	{
+		position.z = 1;
+		newObject.gameObject.transform.position = position;
+		newObject.name = name;
+		newObject.AddComponent("GUIText");
+		newObject.gameObject.guiText.anchor = TextAnchor.MiddleCenter;
+		newObject.gameObject.guiText.alignment = TextAlignment.Center;
+		newObject.gameObject.guiText.fontSize = newFontSize;
+		
+		return newObject;
+	}
 }

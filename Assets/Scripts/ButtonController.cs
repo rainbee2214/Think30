@@ -42,15 +42,13 @@ public class ButtonController : TouchButtonController
 
 	string ChooseLevel()
 	{
-		int temp = Random.Range(0,5);
+		int temp = Random.Range(0,3);
 		string randomLevel;
 		switch(temp)
 		{
 		case 0: randomLevel = "LevelOne";break;
 		case 1: randomLevel = "LevelTwo";break;
 		case 2: randomLevel = "LevelThree";break;
-		case 3: randomLevel = "LevelFour";break;
-		case 4: randomLevel = "LevelFive";break;
 		default: randomLevel = "PlayMenu";break;
 		}
 		return randomLevel;
