@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 2c3ca9fb8555f2346adcbdad547c60ab
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - ScoreText: {instanceID: 0}
+  - goodJob: {fileID: 100000, guid: 1f01ccfd7e3ff9146a7c4606f80410ee, type: 2}
+  - sorry: {fileID: 100000, guid: 1ae72e8b7a5a7e646b1b8aee8ec5d971, type: 2}
+  - levelThreeButton: {fileID: 100000, guid: 9f3ba8fa754a6594294c9862e2a795ab, type: 2}
+  - cursor: {fileID: 100000, guid: 560f117b9ae654946ba5abf9a6399eb4, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
