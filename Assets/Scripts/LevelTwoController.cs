@@ -86,7 +86,7 @@ public class LevelTwoController : LevelController
 			// If answer is right
 			if (CheckAnswer(currentOperator, currentNumberOne, currentNumberTwo, answer))
 			{
-				GameController.controller.CurrentScore += 1;
+				if (Application.loadedLevelName == "LevelTwo")GameController.controller.CurrentScore += 1;
 				lastAnswer = answer;
 				answer = Random.Range(2,10);
 				if (answer == lastAnswer) answer += (Random.Range(-2,2));
@@ -96,7 +96,7 @@ public class LevelTwoController : LevelController
 			}
 			else // Answer is wrong
 			{
-				GameController.controller.CurrentScore -= 1;
+				if (Application.loadedLevelName == "LevelTwo")GameController.controller.CurrentScore -= 1;
 				popups[1].gameObject.GetComponent<PopUpController>().show = true;
 			}
 			currentNumberOne = 0;

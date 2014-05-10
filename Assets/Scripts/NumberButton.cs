@@ -16,12 +16,12 @@ public class NumberButton : TouchButtonController
 	{
 		if ((LevelOneController.levelOneController.currentTarget == "Even") && (int.Parse(this.name)%2 == 0))
 		{
-			GameController.controller.CurrentScore += 1;
+			if (Application.loadedLevelName == "LevelOne")GameController.controller.CurrentScore += 1;
 			gameObject.guiTexture.enabled = false;
 		}
 		if ((LevelOneController.levelOneController.currentTarget == "Odd") && (int.Parse(this.name)%2 != 0))
 		{
-			GameController.controller.CurrentScore += 1;
+			if (Application.loadedLevelName == "LevelOne")GameController.controller.CurrentScore += 1;
 			gameObject.guiTexture.enabled = false;
 		}
 		if ((LevelOneController.levelOneController.currentTarget == "Even") && (int.Parse(this.name)%2 != 0))

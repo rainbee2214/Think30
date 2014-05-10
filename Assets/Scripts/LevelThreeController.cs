@@ -72,7 +72,7 @@ public class LevelThreeController : LevelController
 	
 		if (answer == realAnswer)
 		{
-			GameController.controller.CurrentScore += 1;
+			if (Application.loadedLevelName == "LevelThree")GameController.controller.CurrentScore += 1;
 			currentTime = Time.time;
 			targetTime = currentTime + delay;
 			popups[0].gameObject.GetComponent<PopUpController>().show = true;
