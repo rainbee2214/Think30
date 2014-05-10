@@ -18,10 +18,4 @@ public class GridButton : TouchButtonController
 			CheckForTouches();
 		}
 	}
-	public override void OnTouchBegan()
-	{
-	}
-	public override void OnTouchEnded()
-	{
-	}
 }

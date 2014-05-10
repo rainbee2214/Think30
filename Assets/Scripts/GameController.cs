@@ -59,8 +59,7 @@ public class GameController : MonoBehaviour
 		get{return maxHealth;}
 		set{maxHealth = value;}
 	}
-
-
+	
 	void Start () 
 	{
 		controller = this;
@@ -71,8 +70,6 @@ public class GameController : MonoBehaviour
 	void Update () 
 	{
 		if (CurrentHealth == 0) isGameOver = true;
-
-		//LastLoadedScene = Application.loadedLevelName;
 		if (isGameOver) GameOver();
 		if (CurrentScore > HighScore) HighScore = CurrentScore;
 		if (CurrentStreak > BestStreak) BestStreak = CurrentStreak;
@@ -80,16 +77,13 @@ public class GameController : MonoBehaviour
 
 	void Awake () 
 	{
-		//if control is not set, set it to this one and allow it to persist
 		if (controller == null)
 		{
 			DontDestroyOnLoad(gameObject);
 			controller = this;
 		}
-		//else if control exists and it isn't this instance, destroy this instance
 		else if(controller != this)
 		{
-			Debug.Log ("Game control already exists, deleting this new one");
 			Destroy (gameObject);
 		}
 	}

@@ -68,7 +68,7 @@ public class LevelThreeController : LevelController
 		if (answer > 0)
 			AnswerText.gameObject.guiText.text = ( "= " + answer.ToString() + " ?");
 		else
-			AnswerText.gameObject.guiText.text = "=      ?";
+			AnswerText.gameObject.guiText.text = "=        ?";
 	
 		if (answer == realAnswer)
 		{
