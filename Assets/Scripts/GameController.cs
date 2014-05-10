@@ -99,6 +99,6 @@ public class GameController : MonoBehaviour
 		currentScore = 0;
 		isGameOver = false;
 		CurrentHealth = MaxHealth;
-		Application.LoadLevel("GameOverMenu");
+		Application.LoadLevel("MainMenu");
 	}
 }

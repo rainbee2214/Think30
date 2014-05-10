@@ -28,7 +28,7 @@ public class LevelOneController : LevelController
 		currentTarget = ChangeTarget();
 		targetText = ("Target Numbers: " + currentTarget);
 		SetUpScore();
-		TargetText = CreateGUITextObject(TargetText, "TargetText", new Vector3(0.5f,0.9f,1));
+		TargetText = CreateGUITextObject(TargetText, "TargetText", new Vector3(0.5f,0.85f,1));
 
 		numbers = new GameObject[numberPoolAmount];
 		for(int i = 0; i < numbers.Length; i++)

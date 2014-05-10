@@ -96,6 +96,7 @@ public class LevelTwoController : LevelController
 			}
 			else // Answer is wrong
 			{
+				GameController.controller.CurrentScore -= 1;
 				popups[1].gameObject.GetComponent<PopUpController>().show = true;
 			}
 			currentNumberOne = 0;
@@ -165,7 +166,7 @@ public class LevelTwoController : LevelController
 	
 	void CreatePopups()
 	{
-		popups[0] = Instantiate(goodJob, new Vector3(0.5f, 0.65f,1f), Quaternion.identity) as GameObject;
+		popups[0] = Instantiate(goodJob, new Vector3(0.5f, 0.75f,1f), Quaternion.identity) as GameObject;
 		popups[1] = Instantiate(sorry, new Vector3(0.5f, 0.75f,1f), Quaternion.identity) as GameObject;
 		popups[0].name = "GoodJobPopup";
 		popups[1].name = "SorryPopup";

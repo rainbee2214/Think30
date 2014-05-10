@@ -37,14 +37,13 @@ public class NumberButton : TouchButtonController
 
 	public override void OnTouchEnded()
 	{
-		if ((LevelOneController.levelOneController.currentTarget == "Even") && (int.Parse(this.name)%2 == 0))
+		if (((LevelOneController.levelOneController.currentTarget == "Even") && (int.Parse(this.name)%2 == 0)) ||
+			((LevelOneController.levelOneController.currentTarget == "Odd") && (int.Parse(this.name)%2 != 0)))
 		{
 			GameController.controller.CurrentScore += 1;
 		}
-		if ((LevelOneController.levelOneController.currentTarget == "Odd") && (int.Parse(this.name)%2 != 0))
-		{
-			GameController.controller.CurrentScore += 1;
-		}
+		else
+			GameController.controller.CurrentScore -= 1;
 	}
 	void LoseHealth()
 	{
