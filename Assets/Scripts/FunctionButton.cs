@@ -39,8 +39,8 @@ public class FunctionButton : TouchButtonController
 	}
 	void ChangeC()
 	{
-		if(this.name == "C+") sinWave.GetComponent<MathFunctions>().c += 0.25f;
-		if(this.name == "C-") sinWave.GetComponent<MathFunctions>().c -= 0.25f;
+		if(this.name == "C+") sinWave.GetComponent<MathFunctions>().c += 1f;
+		if(this.name == "C-") sinWave.GetComponent<MathFunctions>().c -= 1f;
 
 		//if(sinWave.GetComponent<MathFunctions>().c < -3) sinWave.GetComponent<MathFunctions>().c = -3;
 		//if(sinWave.GetComponent<MathFunctions>().c > 3) sinWave.GetComponent<MathFunctions>().c = 3;

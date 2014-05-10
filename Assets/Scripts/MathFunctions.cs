@@ -25,6 +25,7 @@ public class MathFunctions : LevelController
 	void Update () 
 	{
 		functionText = ("y = " + a + " sin (" + b + " x) + " + c);
+		if (c < 0) functionText = ("y = " + a + " sin (" + b + " x) - " + Mathf.Abs(c));
 		if (reset) resetGrid();
 		if (!stop)drawSin(a,b,c);
 	}

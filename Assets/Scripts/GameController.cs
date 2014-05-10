@@ -22,7 +22,7 @@ public class GameController : MonoBehaviour
 	public float CurrentScore
 	{
 		get{return currentScore;}
-		set{currentScore += value;}
+		set{currentScore = value;}
 	}
 
 	private float highScore;
@@ -36,7 +36,7 @@ public class GameController : MonoBehaviour
 	public int CurrentStreak
 	{
 		get{return currentStreak;}
-		set{currentStreak += value;}
+		set{currentStreak = value;}
 	}
 
 	private int bestStreak;
@@ -75,6 +75,7 @@ public class GameController : MonoBehaviour
 		//LastLoadedScene = Application.loadedLevelName;
 		if (isGameOver) GameOver();
 		if (CurrentScore > HighScore) HighScore = CurrentScore;
+		if (CurrentStreak > BestStreak) BestStreak = CurrentStreak;
 	}
 
 	void Awake () 

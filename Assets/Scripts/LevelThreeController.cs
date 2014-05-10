@@ -51,9 +51,16 @@ public class LevelThreeController : LevelController
 		GenerateCalculator();
 	}
 	
-
+	float delay = 0.5f;
+	float currentTime, targetTime;
 	void Update () 
 	{
+		for (int i = 0; i < 300;i++)
+		{
+			Debug.Log(i);
+			if(Time.time > 6)
+				break;
+		}
 		OperatorText.gameObject.guiText.text = currentOperator;
 		NumberOne.gameObject.guiText.text = currentNumberOne.ToString();
 		NumberTwo.gameObject.guiText.text = currentNumberTwo.ToString();
@@ -65,12 +72,18 @@ public class LevelThreeController : LevelController
 	
 		if (answer == realAnswer)
 		{
+			GameController.controller.CurrentScore += 1;
+			currentTime = Time.time;
+			targetTime = currentTime + delay;
 			popups[0].gameObject.GetComponent<PopUpController>().show = true;
 			answer = 0;
+
 			currentNumberOne = Random.Range(0,4);
 			currentNumberTwo = Random.Range(0,5);
 			realAnswer = GetRealAnswer();
+				
 		}
+		popups[0].gameObject.GetComponent<PopUpController>().show = false;
 
 	}
 	

@@ -29,7 +29,6 @@ public class LevelOneController : LevelController
 		targetText = ("Target Numbers: " + currentTarget);
 		SetUpScore();
 		TargetText = CreateGUITextObject(TargetText, "TargetText", new Vector3(0.5f,0.9f,1));
-		ScoreText = CreateGUITextObject(ScoreText, "ScoreText", new Vector3(0.5f,0.1f,1));
 
 		numbers = new GameObject[numberPoolAmount];
 		for(int i = 0; i < numbers.Length; i++)
@@ -47,7 +46,6 @@ public class LevelOneController : LevelController
 	{
 		currentLevelScore++;
 		TargetText.gameObject.guiText.text = targetText;
-		ScoreText.gameObject.guiText.text = scoreText;
 
 		for (int i = 0; i < numbers.Length; i++)
 		{
@@ -86,9 +84,9 @@ public class LevelOneController : LevelController
 		startingLocation.y = startingY;
 		switch(i)
 		{
-		case 0:startingLocation.x = 0.05f;break;
+		case 0:startingLocation.x = 0.15f;break;
 		case 1:startingLocation.x = 0.45f;break;
-		case 2:startingLocation.x = 0.85f;break;
+		case 2:startingLocation.x = 0.75f;break;
 		default:startingLocation.x = 0.45f;break;
 		}
 	}

@@ -16,10 +16,12 @@ public class NumberButton : TouchButtonController
 	{
 		if ((LevelOneController.levelOneController.currentTarget == "Even") && (int.Parse(this.name)%2 == 0))
 		{
+			GameController.controller.CurrentScore += 1;
 			gameObject.guiTexture.enabled = false;
 		}
 		if ((LevelOneController.levelOneController.currentTarget == "Odd") && (int.Parse(this.name)%2 != 0))
 		{
+			GameController.controller.CurrentScore += 1;
 			gameObject.guiTexture.enabled = false;
 		}
 		if ((LevelOneController.levelOneController.currentTarget == "Even") && (int.Parse(this.name)%2 != 0))
@@ -33,6 +35,17 @@ public class NumberButton : TouchButtonController
 		if (loseHealth) LoseHealth();
 	}
 
+	public override void OnTouchEnded()
+	{
+		if ((LevelOneController.levelOneController.currentTarget == "Even") && (int.Parse(this.name)%2 == 0))
+		{
+			GameController.controller.CurrentScore += 1;
+		}
+		if ((LevelOneController.levelOneController.currentTarget == "Odd") && (int.Parse(this.name)%2 != 0))
+		{
+			GameController.controller.CurrentScore += 1;
+		}
+	}
 	void LoseHealth()
 	{
 		GameController.controller.CurrentHealth = -1;

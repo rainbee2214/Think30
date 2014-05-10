@@ -5,20 +5,31 @@ public class PopUpController : MonoBehaviour
 {
 	public bool show;
 
-	public Color originalColor;
-	public Color lerpColor;
-	float timeLength = 0.01f;
 
-	void FixedUpdate () 
+	void Start ()
 	{
-		lerpColor = Color.Lerp(originalColor, Camera.main.backgroundColor, timeLength);
-		gameObject.guiText.color = lerpColor;
-		timeLength += 0.02f;
+		gameObject.guiText.text = "";
+	}
+
+	void Update () 
+	{
+	
+
 		if (show) 
 		{
-			show = false;
-			timeLength = 0.01f;
+			if (gameObject.name == "SorryPopup")
+				gameObject.guiText.text = "Sorry!";
+			if (gameObject.name == "GoodJobPopup")
+				gameObject.guiText.text = "Good Job!";
 		}
+		else //(!show)
+		{
+			if (gameObject.name == "SorryPopup")
+				gameObject.guiText.text = "";
+			if (gameObject.name == "GoodJobPopup")
+				gameObject.guiText.text = "";
+		}
+		
 	}
 
 
