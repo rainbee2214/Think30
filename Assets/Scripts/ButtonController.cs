@@ -41,8 +41,22 @@ public class ButtonController : TouchButtonController
 			GameController.controller.CurrentStreak = 0;
 			GameController.controller.CurrentScore = 0;
 		}
-		//if(this.name == "PlayAgainButton") Application.LoadLevel("PlayMenu");
-
+		if(this.name == "LevelOneDemo") 
+		{
+			Application.LoadLevel("LevelOneDemo");
+		}
+		if(this.name == "LevelTwoDemo")
+		{
+			Application.LoadLevel("LevelTwoDemo");
+		}
+		if(this.name == "LevelThreeDemo")
+		{
+			Application.LoadLevel("LevelThreeDemo");
+		}
+		if(this.name == "BonusDemo") 
+		{
+			Application.LoadLevel("BonusDemo");
+		}
 		
 	}
 

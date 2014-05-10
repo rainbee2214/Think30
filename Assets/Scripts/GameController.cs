@@ -4,6 +4,7 @@ using System.Collections;
 public class GameController : MonoBehaviour 
 {
 	public static GameController controller;
+	public bool levelOneUnlocked, levelTwoUnlocked, levelThreeUnlocked, bonusLevelUnlocked;
 
 	private bool isGameOver;
 	public bool IsGameOver
@@ -62,6 +63,10 @@ public class GameController : MonoBehaviour
 	
 	void Start () 
 	{
+		levelOneUnlocked = false;
+		levelTwoUnlocked = false;
+		levelThreeUnlocked = true;
+
 		controller = this;
 		MaxHealth = 3;
 		CurrentHealth = MaxHealth;
@@ -69,6 +74,12 @@ public class GameController : MonoBehaviour
 
 	void Update () 
 	{
+		if (Input.GetKeyDown(KeyCode.Escape)) 
+		{
+			if(Application.loadedLevelName == "MainMenu") Application.Quit();
+			else Application.LoadLevel("MainMenu");
+		}
+
 		if (CurrentHealth == 0) isGameOver = true;
 		if (isGameOver) GameOver();
 		if (CurrentScore > HighScore) HighScore = CurrentScore;
