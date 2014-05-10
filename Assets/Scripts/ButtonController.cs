@@ -37,6 +37,7 @@ public class ButtonController : TouchButtonController
 		if(this.name == "BackButton") Application.LoadLevel(GameController.controller.LastLoadedScene);
 		if(this.name == "MainMenuButton") Application.LoadLevel("MainMenu");
 		if(this.name == "PlayAgainButton") Application.LoadLevel("PlayMenu");
+
 		
 	}
 
